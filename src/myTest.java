@@ -17,7 +17,7 @@ public class myTest
 		int choice;
 
 		do {
-			System.out.println("---------MAIN MENU--------\n1 - Add First Node\n2 - Add Last Node\n3 - Add At Index");
+			System.out.println("\n---------MAIN MENU--------\n1 - Add First Node\n2 - Add Last Node\n3 - Add At Index");
 			System.out.println("4 - Remove First Node\n5 - Remove Last Node\n6 - Remove At Index");
 			System.out.println("7 – Print List Size\n8 – Print List (Forward)\n9 – Print List In Reverse\n10 - Exit Program");
 			System.out.println("\nEnter option number: ");
@@ -26,13 +26,49 @@ public class myTest
 			switch (choice){
 				case 1: System.out.println("Testing method addFirstNode(), Enter data to add:");
 						int d = sc.nextInt();
-						myList.addFirstNode(d);
 						System.out.print("List before adding first node: " );
-
-						System.out.println("\nList after adding first node: ");
+						myList.printList(); //Prints old list, then updates the list, then print updated version
+						myList.addFirstNode(d);
+						System.out.print("\nList after adding first node: ");
 						myList.printList();
-				break;
-				case 2:
+					break;
+				case 2: System.out.println("Testing method addLastNode(), Enter data to add:");
+						int a = sc.nextInt();
+						System.out.print("List before adding last node: " );
+						myList.printList();
+						myList.addLastNode(a);
+						System.out.print("\nList after adding last node: ");
+						myList.printList();
+					break;
+				case 3: System.out.println("Testing method addAtIndex(), Enter index :");
+					int a1 = sc.nextInt();
+					if (a1 < 0){ // checking if index is in range
+						System.out.println("Invalid index, try again.");
+						break;
+					}
+					System.out.println("Enter data to add: ");
+					int d1 = sc.nextInt();
+					System.out.print("List before adding at index node: " );
+					myList.printList();
+					myList.addAtIndex(a1,d1);
+					System.out.print("\nList after adding at index node: ");
+					myList.printList();
+					break;
+				case 4: System.out.println("Testing method removeFirstNode().");
+					System.out.print("List before adding last node: " );
+					myList.printList();
+					myList.removeFirstNode();
+					System.out.print("\nList after adding last node: ");
+					myList.printList();
+					break;
+				case 5: System.out.println("Testing method removeLastNode().");
+					System.out.print("List before adding last node: " );
+					myList.printList();
+					myList.removeLastNode();
+					System.out.print("\nList after adding last node: ");
+					myList.printList();
+					break;
+				case 6:
 			}
 		} while (choice != 10);
 

@@ -42,10 +42,6 @@ public class LinkedList {
 
 	//method #2: add node at index
 	public void addAtIndex(int index, int data) {
-		if (index < 0){ // checking if index is in range
-			System.out.println("Invalid index, try again.");
-		}
-
 		if (index == 0){
 			addFirstNode(data); // adds data to head
 		} else if (index >= countNodes()){
@@ -53,7 +49,7 @@ public class LinkedList {
 		} else {
 			Node current = head;
 			Node temp = head.next;
-			for (int i = 1; i < index; i++){
+			for (int i = 1; i < index; i++){ //iterates through list until index is found
 				current = current.next;
 				temp = temp.next;
 			}
@@ -80,6 +76,10 @@ public class LinkedList {
 
 	//method #4: remove last node
 	public void removeLastNode() {
+		if (countNodes() == 0) {
+			System.out.println("List is Empty.");
+		} //finish this
+
 		//complete this method
 	}
 
@@ -109,12 +109,10 @@ public class LinkedList {
 	//================= end of your part ==============
 
 	//method to print out the list
-	public void printList()
-	{
+	public void printList() {
 		Node temp;
 		temp = head;
-		while (temp != null)
-		{
+		while (temp != null) {
 			System.out.print(temp.data + "   ");
 			temp = temp.next;
 		}
