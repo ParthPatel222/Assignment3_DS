@@ -8,6 +8,7 @@
 This class define a linked list that stores integer values.
 */
 
+
 public class LinkedList {
 	public Node head, tail;
 
@@ -57,7 +58,6 @@ public class LinkedList {
 			current.next = new Node(data); // creates new node
 			current.next.next = temp;
 		}
-		//complete this method
 	}
 
 	//method #3: remove first node
@@ -66,26 +66,47 @@ public class LinkedList {
 			System.out.println("List is Empty.");
 		} else {
 			Node temp = head;
-			head = head.next;
-			if (head == null){
+			head = head.next; //sets next node as head
+			if (head == null){ //removes old head
 				tail = null;
 			}
 		}
-		//complete this method
 	}
 
 	//method #4: remove last node
 	public void removeLastNode() {
 		if (countNodes() == 0) {
 			System.out.println("List is Empty.");
-		} //finish this
-
-		//complete this method
+		} else if (countNodes() == 1) {
+			head = tail = null;
+		} else {
+			Node curr = head;
+			for (int i = 0;i < countNodes() - 2; i++){ //runs until second to last index is hit
+				curr = curr.next;
+			}
+			Node temp = tail;
+			tail = curr;
+			tail.next = null;
+		}
 	}
 
 	//method #5: remove node at index
 	public void removeAtIndex(int index) {
-		//complete this method
+		if (index == 0){
+			removeFirstNode(); // deletes data at head
+		} else if (index >= countNodes()){
+			removeLastNode(); // deletes data at tail using countNodes() to find LinkedList size
+		} else {
+			Node current = head;
+			Node temp = head.next;
+			for (int i = 1; i < index; i++){ //iterates through list until index is found
+				current = current.next;
+				temp = temp.next;
+			}
+			temp = current.next;
+			current.next.next = temp;
+			current.next = null; // deletes node
+		}
 	}
 
 	//method #6: countNodes
@@ -105,6 +126,7 @@ public class LinkedList {
 	{
 		//complete this method as recursive methods
 	}
+
 
 	//================= end of your part ==============
 

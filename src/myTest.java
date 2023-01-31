@@ -54,7 +54,8 @@ public class myTest
 					System.out.print("\nList after adding at index node: ");
 					myList.printList();
 					break;
-				case 4: System.out.println("Testing method removeFirstNode().");
+				case 4:
+					System.out.println("Testing method removeFirstNode().");
 					System.out.print("List before adding last node: " );
 					myList.printList();
 					myList.removeFirstNode();
@@ -68,7 +69,17 @@ public class myTest
 					System.out.print("\nList after adding last node: ");
 					myList.printList();
 					break;
-				case 6:
+				case 6:  System.out.println("Testing method addAtIndex(), Enter index :");
+					int a3 = sc.nextInt();
+					if (a3 < 0){ // checking if index is in range
+						System.out.println("Invalid index, try again.");
+						break;
+					}
+					System.out.print("List before adding at index node: ");
+					myList.printList();
+					myList.removeAtIndex(a3);
+					System.out.print("\nList after adding at index node: ");
+					myList.printList();
 			}
 		} while (choice != 10);
 
