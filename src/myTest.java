@@ -32,6 +32,7 @@ public class myTest
 						System.out.print("\nList after adding first node: ");
 						myList.printList();
 					break;
+
 				case 2: System.out.println("Testing method addLastNode(), Enter data to add:");
 						int a = sc.nextInt();
 						System.out.print("List before adding last node: " );
@@ -40,6 +41,7 @@ public class myTest
 						System.out.print("\nList after adding last node: ");
 						myList.printList();
 					break;
+
 				case 3: System.out.println("Testing method addAtIndex(), Enter index :");
 					int a1 = sc.nextInt();
 					if (a1 < 0){ // checking if index is in range
@@ -54,21 +56,24 @@ public class myTest
 					System.out.print("\nList after adding at index node: ");
 					myList.printList();
 					break;
+
 				case 4:
 					System.out.println("Testing method removeFirstNode().");
-					System.out.print("List before adding last node: " );
+					System.out.print("List before removing first node: " );
 					myList.printList();
 					myList.removeFirstNode();
-					System.out.print("\nList after adding last node: ");
+					System.out.print("\nList after removing first node: ");
 					myList.printList();
 					break;
+
 				case 5: System.out.println("Testing method removeLastNode().");
-					System.out.print("List before adding last node: " );
+					System.out.print("List before removing last node: " );
 					myList.printList();
 					myList.removeLastNode();
-					System.out.print("\nList after adding last node: ");
+					System.out.print("\nList after removing last node: ");
 					myList.printList();
 					break;
+
 				case 6:  System.out.println("Testing method addAtIndex(), Enter index :");
 					int a3 = sc.nextInt();
 					if (a3 < 0){ // checking if index is in range
@@ -80,6 +85,21 @@ public class myTest
 					myList.removeAtIndex(a3);
 					System.out.print("\nList after adding at index node: ");
 					myList.printList();
+					break;
+
+				case 7: System.out.print("Testing method countNodes(): ");
+					System.out.println("\nList sizes is "+myList.countNodes() + " nodes");
+					break;
+
+				case 8: System.out.println("Testing method printList(): ");
+					myList.printList();
+					break;
+
+				case 9: System.out.println("Testing method printInReverse(): ");
+					System.out.print("List before reversing: ");
+					myList.printList();
+					//myList.printInReverse();
+					break;
 			}
 		} while (choice != 10);
 

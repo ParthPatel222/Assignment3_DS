@@ -63,7 +63,7 @@ public class LinkedList {
 	//method #3: remove first node
 	public void removeFirstNode() {
 		if (countNodes() == 0){
-			System.out.println("List is Empty.");
+			System.out.println("\nList is Empty.");
 		} else {
 			Node temp = head;
 			head = head.next; //sets next node as head
@@ -76,7 +76,7 @@ public class LinkedList {
 	//method #4: remove last node
 	public void removeLastNode() {
 		if (countNodes() == 0) {
-			System.out.println("List is Empty.");
+			System.out.println("\nList is Empty.");
 		} else if (countNodes() == 1) {
 			head = tail = null;
 		} else {
@@ -84,28 +84,26 @@ public class LinkedList {
 			for (int i = 0;i < countNodes() - 2; i++){ //runs until second to last index is hit
 				curr = curr.next;
 			}
-			Node temp = tail;
-			tail = curr;
-			tail.next = null;
+			tail = curr; //makes second to last index tail
+			tail.next = null; //deletes old tail
 		}
 	}
 
 	//method #5: remove node at index
 	public void removeAtIndex(int index) {
-		if (index == 0){
+		if (countNodes() == 0) {
+			System.out.println("\nList is Empty.");
+		} else if (index == 0){
 			removeFirstNode(); // deletes data at head
 		} else if (index >= countNodes()){
 			removeLastNode(); // deletes data at tail using countNodes() to find LinkedList size
 		} else {
-			Node current = head;
-			Node temp = head.next;
-			for (int i = 1; i < index; i++){ //iterates through list until index is found
-				current = current.next;
-				temp = temp.next;
+			Node prev = head;
+			for (int i = 1; i < index; i++){ //iterates until index and sets prev to next link
+				prev = prev.next;
 			}
-			temp = current.next;
-			current.next.next = temp;
-			current.next = null; // deletes node
+			Node curr = prev.next; //current is now prev next
+			prev.next = curr.next; //updates the link
 		}
 	}
 
@@ -122,8 +120,8 @@ public class LinkedList {
 	}
 
 	//method #7: pritnInReverse  (Recursive method)
-	public void printInReverse(Node L)
-	{
+	public void printInReverse(Node L) {
+
 		//complete this method as recursive methods
 	}
 
