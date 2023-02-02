@@ -73,6 +73,7 @@ public class LinkedList {
 		}
 	}
 
+
 	//method #4: remove last node
 	public void removeLastNode() {
 		if (countNodes() == 0) {
@@ -121,8 +122,11 @@ public class LinkedList {
 
 	//method #7: pritnInReverse  (Recursive method)
 	public void printInReverse(Node L) {
-
-		//complete this method as recursive methods
+		if (L == null) {
+			return;
+		}
+		printInReverse(L.next); //recursively calls method until last node is reached
+		System.out.print(L.data + "   "); //prints data
 	}
 
 

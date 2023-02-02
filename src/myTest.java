@@ -98,7 +98,8 @@ public class myTest
 				case 9: System.out.println("Testing method printInReverse(): ");
 					System.out.print("List before reversing: ");
 					myList.printList();
-					//myList.printInReverse();
+					System.out.print("\nList after reversing: ");
+					myList.printInReverse(myList.head);
 					break;
 			}
 		} while (choice != 10);
