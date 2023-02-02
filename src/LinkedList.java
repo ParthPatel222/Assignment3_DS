@@ -122,7 +122,7 @@ public class LinkedList {
 
 	//method #7: pritnInReverse  (Recursive method)
 	public void printInReverse(Node L) {
-		if (L == null) {
+		if (L == null) { //Base case
 			return;
 		}
 		printInReverse(L.next); //recursively calls method until last node is reached
