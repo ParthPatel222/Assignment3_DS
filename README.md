@@ -1,4 +1,4 @@
-# Assignment3_DS
+# Assignment3_Data_Structures
 Basic linked list program that provides a menu in which the user can:
 1 - Add First Node
 2 – Add Last Node
