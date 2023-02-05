@@ -120,7 +120,7 @@ public class LinkedList {
 		return listSize; //this methods returns the list size
 	}
 
-	//method #7: pritnInReverse  (Recursive method)
+	//method #7: printInReverse  (Recursive method)
 	public void printInReverse(Node L) {
 		if (L == null) { //Base case
 			return;

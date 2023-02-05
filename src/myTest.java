@@ -44,7 +44,7 @@ public class myTest
 
 				case 3: System.out.println("Testing method addAtIndex(), Enter index :");
 					int a1 = sc.nextInt();
-					if (a1 < 0){ // checking if index is in range
+					if (a1 < 0 || a1 > myList.countNodes()){ //check if index is valid
 						System.out.println("Invalid index, try again.");
 						break;
 					}
@@ -57,7 +57,10 @@ public class myTest
 					myList.printList();
 					break;
 
-				case 4:
+				case 4: if (myList.head == null){ // checking if list is empty
+						System.out.println("List is empty, try again.");
+						break;
+					}
 					System.out.println("Testing method removeFirstNode().");
 					System.out.print("List before removing first node: " );
 					myList.printList();
@@ -66,7 +69,11 @@ public class myTest
 					myList.printList();
 					break;
 
-				case 5: System.out.println("Testing method removeLastNode().");
+				case 5: if (myList.head == null){ // checking if list is empty
+						System.out.println("List is empty, try again.");
+						break;
+					}
+					System.out.println("Testing method removeLastNode().");
 					System.out.print("List before removing last node: " );
 					myList.printList();
 					myList.removeLastNode();
@@ -74,9 +81,9 @@ public class myTest
 					myList.printList();
 					break;
 
-				case 6:  System.out.println("Testing method addAtIndex(), Enter index :");
+				case 6:  System.out.println("Testing method removeAtIndex(), Enter index :");
 					int a3 = sc.nextInt();
-					if (a3 < 0){ // checking if index is in range
+					if (a3 < 0 || a3 > myList.countNodes()){ //check if index is valid
 						System.out.println("Invalid index, try again.");
 						break;
 					}
